@@ -21,6 +21,7 @@ public class GlobalSessionAutoConfiguration {
         bean.setName("session-filter");//filter name
         bean.setFilter(new GlobalSessionFilter());//filter implement
         bean.setDispatcherTypes(DispatcherType.REQUEST);
+        bean.setOrder(10);
         bean.setUrlPatterns(Collections.singleton("/*"));//url mapping
         return bean;
     }
