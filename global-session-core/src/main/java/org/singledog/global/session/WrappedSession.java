@@ -126,7 +126,7 @@ public class WrappedSession extends WrappedSessionMeta implements HttpSession {
     @SuppressWarnings("unchecked")
     @Override
     public void invalidate() {
-        SpringContextUtil.getBeanByType(RedisTemplate.class).delete(this.getCacheKey());
+        getHashOperations().getOperations().delete(this.getCacheKey());
     }
 }
 
